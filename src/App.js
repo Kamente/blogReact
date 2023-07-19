@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
+//parent component
+function BlogPost() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BlogContent articleText="Dear Reader: Bjarne Stroustrup has the perfect lecture oration." />
     </div>
   );
 }
 
-export default App;
+//child component. It is returned in the parent component
+function BlogContent(props) {
+  return <div>{props.articleText}</div>;
+}
+
+export default BlogPost;
+
+
+
+// function parentComponent() {
+//   return (
+//     <div>
+//       <ChildComponent theTxt="parentComponent" />
+//     </div>
+//   )
+// }
+
+// function ChildComponent(props) {
+//   return (
+//     <div>{props.theTxt}</div>
+//   );
+// }
+// export default parentComponent;
